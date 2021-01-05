@@ -96,7 +96,7 @@ function setup() {
 }
 
 function draw() {
-  background(150, 180, 150);
+  background(0, 180, 150);
 
   // for (var i = 0; i < NumberOfButtons; i++) {        // trying to improve the animation
   //     if ((millis - milliseconds[i]) > 1000) {
