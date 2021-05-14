@@ -1,0 +1,20 @@
+{
+  "name": "Orchlab Percussion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "rm -rf ./dist/* && cp ./index.html ./dist/index.html && cp ./main.js ./dist/main.js && cp ./p5.min.js ./dist/p5.min.js && cp ./p5old.sound.min.js ./dist/p5old.sound.min.js && cp -avr ./images/ ./dist/ && cp -avr ./sounds/ ./dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gawainhewitt/sketchpercussion.git"
+  },
+  "keywords": [],
+  "author": "Gawain Hewitt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gawainhewitt/sketchpercussion/issues"
+  },
+  "homepage": "https://github.com/gawainhewitt/sketchpercussion#readme"
+}
