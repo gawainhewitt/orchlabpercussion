@@ -167,8 +167,8 @@ textFont(lato);
       text('or use QWERTYUIO keys on a keyboard', width/2, height/10 * 5);
       text('On Apple devices, turn off silent mode.', width/2, height/10 * 6);
       imageMode(CORNERS);
-      image(lpoLogo, width/4, height/10 * 8, width/4 + ((height/10 *2) * 1.95), height);
-      image(dmLogo, width/4 * 3 - ((height/10 *2) * 1.41), height/10 * 8, width/4 * 3, height);
+      image(lpoLogo, width/4, ((height/10 * 8)-10), width/4 + ((height/10 *2) * 1.95), height -10);
+      image(dmLogo, width/4 * 3 - ((height/10 *2) * 1.41), ((height/10 * 8)-10), width/4 * 3, height -10);
     }
     else if (mode ==='landscape_mobile')
     {
@@ -183,8 +183,8 @@ textFont(lato);
       text('or use QWERTYUIO keys on a keyboard', width/2, height/10 * 5);
       text('On Apple devices, turn off silent mode.', width/2, height/10 * 6);
       imageMode(CORNERS);
-      image(lpoLogo, width/4, height/10 * 8, width/4 + ((height/10 *2) * 1.95), height);
-      image(dmLogo, width/4 * 3 - ((height/10 *2) * 1.41), height/10 * 8, width/4 * 3, height);
+      image(lpoLogo, width/4, ((height/10 * 8)-10), width/4 + ((height/10 *2) * 1.95), height -10);
+      image(dmLogo, width/4 * 3 - ((height/10 *2) * 1.41), ((height/10 * 8)-10), width/4 * 3, height -10);
     }
     else if ((mode === 'portrait_tablet') || (mode === 'portrait_mobile'))
     {
@@ -202,8 +202,8 @@ textFont(lato);
       text('On Apple devices,', width/2, picSize/4 * 11);
       text('turn off silent mode', width/2, picSize/4 * 12);
       imageMode(CORNERS);
-      image(lpoLogo, width/6, height/10 * 9, width/6 + ((height/10) * 1.95), height);
-      image(dmLogo, width/6 * 5 - ((height/10) * 1.41), height/10 * 9, width/6 * 5, height);
+      image(lpoLogo, width/6, ((height/10 * 9)-10), width/6 + ((height/10) * 1.95), height-10);
+      image(dmLogo, width/6 * 5 - ((height/10) * 1.41), ((height/10 * 9)-10), width/6 * 5, height-10);
     }
   }else{
     imageMode(CORNER);imageMode(CORNER);
