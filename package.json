@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gawainhewitt/sketchpercussion.git"
+    "url": "git+https://github.com/gawainhewitt/orchlabpercussion.git"
   },
   "keywords": [],
   "author": "Gawain Hewitt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gawainhewitt/sketchpercussion/issues"
+    "url": "https://github.com/gawainhewitt/orchlabpercussion/issues"
   },
-  "homepage": "https://github.com/gawainhewitt/sketchpercussion#readme"
+  "homepage": "https://github.com/gawainhewitt/orchlabpercussion#readme"
 }
