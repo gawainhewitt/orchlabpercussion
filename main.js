@@ -34,6 +34,9 @@ var image5;
 var image6;
 var image7;
 var image8;
+var orchlabLogo;
+var lpoLogo;
+var dmLogo;
 
 var altImage1;        // these variables store the other images
 var altImage2;
@@ -44,34 +47,42 @@ var altImage6;
 var altImage7;
 var altImage8;
 
+var lato; // font
+
 
 function preload() {                                  // p5.js function which preloads media into the browser
-  sound1 = loadSound('sounds/one.mp3');
-  sound2 = loadSound('sounds/two.mp3');
-  sound3 = loadSound('sounds/three.mp3');
-  sound4 = loadSound('sounds/four.mp3');
-  sound5 = loadSound('sounds/five.mp3');
-  sound6 = loadSound('sounds/six.mp3');
-  sound7 = loadSound('sounds/seven.mp3');
-  sound8 = loadSound('sounds/eight.mp3');
+  sound1 = loadSound('assets/one.mp3');
+  sound2 = loadSound('assets/two.mp3');
+  sound3 = loadSound('assets/three.mp3');
+  sound4 = loadSound('assets/four.mp3');
+  sound5 = loadSound('assets/five.mp3');
+  sound6 = loadSound('assets/six.mp3');
+  sound7 = loadSound('assets/seven.mp3');
+  sound8 = loadSound('assets/eight.mp3');
 
-  image1 = loadImage('images/one.png');
-  image2 = loadImage('images/two.png');
-  image3 = loadImage('images/three.png');
-  image4 = loadImage('images/four.png');
-  image5 = loadImage('images/five.png');
-  image6 = loadImage('images/six.png');
-  image7 = loadImage('images/seven.png');
-  image8 = loadImage('images/eight.png');
+  image1 = loadImage('assets/one.png');
+  image2 = loadImage('assets/two.png');
+  image3 = loadImage('assets/three.png');
+  image4 = loadImage('assets/four.png');
+  image5 = loadImage('assets/five.png');
+  image6 = loadImage('assets/six.png');
+  image7 = loadImage('assets/seven.png');
+  image8 = loadImage('assets/eight.png');
 
-  altImage1 = loadImage('images/one_2.png');
-  altImage2 = loadImage('images/two_2.png');
-  altImage3 = loadImage('images/three_2.png');
-  altImage4 = loadImage('images/four_2.png');
-  altImage5 = loadImage('images/five_2.png');
-  altImage6 = loadImage('images/six_2.png');
-  altImage7 = loadImage('images/seven_2.png');
-  altImage8 = loadImage('images/eight_2.png');
+  orchlabLogo = loadImage('assets/orchlablogo.jpg');
+  lpoLogo = loadImage('assets/LPO_logo.png');
+  dmLogo = loadImage('assets/DMLogo.png');
+
+  altImage1 = loadImage('assets/one_2.png');
+  altImage2 = loadImage('assets/two_2.png');
+  altImage3 = loadImage('assets/three_2.png');
+  altImage4 = loadImage('assets/four_2.png');
+  altImage5 = loadImage('assets/five_2.png');
+  altImage6 = loadImage('assets/six_2.png');
+  altImage7 = loadImage('assets/seven_2.png');
+  altImage8 = loadImage('assets/eight_2.png');
+
+  lato = loadFont('assets/Lato-Regular.ttf');
 
 }
 
@@ -89,26 +100,14 @@ function setup() {
   imagePositionY = []; // as above
   milliseconds = []; // I wanted to use this to improve the animations. At present it doesn't really do anything, but it is updates in the buttonPressed function so needs to remain live at least for now
   info = true; // show the info screen? used at startup
-  textSize(width / 20); // how big the text is depending on which screen you are using
   textAlign(CENTER, CENTER); // where the text goes on the screen
 }
 
 function draw() {
-  background(150, 180, 150);
-
-  // for (var i = 0; i < NumberOfButtons; i++) {        // trying to improve the animation
-  //     if ((millis - milliseconds[i]) > 1000) {
-  //       if (buttonState[i] === 1) {
-  //         imageFiles[i] = offImageFiles[i];
-  //         buttonState[i] = 0;
-  //     }
-  //   }
-  // }
 
   if (width < 500) { // test for portrait mobile
     mode  = 'portrait_mobile';
     picSize = height/4;
-    textSize(width / 20);
     translatePos1 = width/2 - picSize;
     translatePos2 = 0;
     imagePositionX = [picSize * 0, picSize * 1, picSize * 0, picSize * 1, picSize * 0, picSize * 1, picSize * 0, picSize * 1];
@@ -118,7 +117,6 @@ function draw() {
   else if (width < 1000 && height < 500) { // test for landscape mobile
     mode  = 'landscape_mobile';
     picSize = width/4;
-    textSize(width / 20);
     translatePos1 = 0;
     translatePos2 = height/2 - picSize;
     imagePositionX = [picSize * 0, picSize * 1, picSize * 2, picSize * 3, picSize * 0, picSize * 1, picSize * 2, picSize * 3];
@@ -128,7 +126,6 @@ function draw() {
   else if ((height < 1300 && height > 600) && (width < 1000 && width > 600)) { // test for landscape tablet
     mode  = 'portrait_tablet';
     picSize = height/4;
-    textSize(width / 20);
     translatePos1 = width/2 - picSize;
     translatePos2 = 0;
     imagePositionX = [picSize * 0, picSize * 1, picSize * 0, picSize * 1, picSize * 0, picSize * 1, picSize * 0, picSize * 1];
@@ -137,7 +134,6 @@ function draw() {
   } else if ((width < 1300 && width > 600) && (height < 1000 && height > 600)) { // test for landscape tablet
     mode  = 'landscape_tablet';
     picSize = width/4;
-    textSize(width / 20);
     translatePos1 = 0;
     translatePos2 = height/2 - picSize;
     imagePositionX = [picSize * 0, picSize * 1, picSize * 2, picSize * 3, picSize * 0, picSize * 1, picSize * 2, picSize * 3];
@@ -146,49 +142,77 @@ function draw() {
   } else {
     mode  = 'default';
     picSize = width/4;
-    textSize(width / 20);
     translatePos1 = 0;
     translatePos2 = height/2 - picSize;
     imagePositionX = [picSize * 0, picSize * 1, picSize * 2, picSize * 3, picSize * 0, picSize * 1, picSize * 2, picSize * 3];
     imagePositionY = [picSize * 0, picSize * 0, picSize * 0, picSize * 0, picSize * 1, picSize * 1, picSize * 1, picSize * 1];
   }
 
-  // text(mode, 10, 30); displays which mode it detects for debugging
-
-  translate(translatePos1, translatePos2); // move x and y "home" based on the if/else loops above (remember this is cumalitive through this loop)
-
-  for (var i = 0; i < NumberOfButtons; i++) { // this loop places the images and sizes them based on the if/else loops above
-    image(imageFiles[i], imagePositionX[i], imagePositionY[i], picSize, picSize);
-  }
+  //console.log(`mode: ${mode}`); //displays which mode it detects for debugging
 
 // this next bit controls the info screen - also remember that translate is cumalative!
+
+textFont(lato);
+
   if (info) {
     if ((mode ==='landscape_tablet') || (mode ==='default')) {
-      fill(255, 200, 255, 200);
-      rect(0, 0, picSize * 4, picSize * 2);
-      fill(0);
-      text("Gawain's Percussion Box", picSize * 2, picSize/2);
-      text('Use the letters QWERTYUI to play', picSize * 2, picSize);
-      text('Or touch the screen', picSize * 2, picSize/4 * 5);
+      background(245, 247, 247);
+      imageMode(CORNER);
+      image(orchlabLogo, (width/2 - (((height/5)*2.63)/2)), 10, ((height/5)*2.63), height/5);
+      fill('#212529');
+      textSize(height/10);
+      text("Percussion Box", width/2, height/10 * 3);
+      textSize(height/18);
+      text('To play: touch or click screen,', width/2, height/10 * 4);
+      text('or use QWERTYUIO keys on a keyboard', width/2, height/10 * 5);
+      text('On Apple devices, turn off silent mode.', width/2, height/10 * 6);
+      imageMode(CORNERS);
+      image(lpoLogo, width/4, height/10 * 8, width/4 + ((height/10 *2) * 1.95), height);
+      image(dmLogo, width/4 * 3 - ((height/10 *2) * 1.41), height/10 * 8, width/4 * 3, height);
     }
     else if (mode ==='landscape_mobile')
     {
-      fill(255, 200, 255, 200);
-      rect(0, 0, picSize * 4, picSize * 2);
-      fill(0);
-      text("Gawain's Percussion Box", picSize * 2, picSize/2);
-      text('Touch the screen to play', picSize * 2, picSize);
+      background(245, 247, 247);
+      imageMode(CORNER);
+      image(orchlabLogo, (width/2 - (((height/5)*2.63)/2)), 10, ((height/5)*2.63), height/5);
+      fill('#212529');
+      textSize(height/10);
+      text("Percussion Box", width/2, height/10 * 3);
+      textSize(height/18);
+      text('To play: touch or click screen,', width/2, height/10 * 4);
+      text('or use QWERTYUIO keys on a keyboard', width/2, height/10 * 5);
+      text('On Apple devices, turn off silent mode.', width/2, height/10 * 6);
+      imageMode(CORNERS);
+      image(lpoLogo, width/4, height/10 * 8, width/4 + ((height/10 *2) * 1.95), height);
+      image(dmLogo, width/4 * 3 - ((height/10 *2) * 1.41), height/10 * 8, width/4 * 3, height);
     }
     else if ((mode === 'portrait_tablet') || (mode === 'portrait_mobile'))
     {
-      fill(255, 200, 255, 200);
-      rect(0, 0, picSize * 2, picSize * 4);
-      fill(0);
-      text("Gawain's", picSize, picSize);
-      text('Percussion Box', picSize, picSize/4 * 5);
-      text('Touch the screen', picSize, picSize * 2);
-      text('to play', picSize, picSize/4 * 9);
+      background(245, 247, 247);
+      imageMode(CORNER);
+      image(orchlabLogo, (width/2 - (((picSize/2)*2.63)/2)), 10, ((picSize/2)*2.63), picSize/2);
+      fill('#212529');
+      textSize(width/10);
+      text("Percussion Box", width/2, picSize);
+      textSize(width/18);
+      text('To play: ', width/2, picSize/4 * 6);
+      text('touch or click screen,', width/2, picSize/4 * 7);
+      text('or use QWERTYUI keys', width/2, picSize/4 * 8);
+      text('on a keyboard', width/2, picSize/4 * 9);
+      text('On Apple devices,', width/2, picSize/4 * 11);
+      text('turn off silent mode', width/2, picSize/4 * 12);
+      imageMode(CORNERS);
+      image(lpoLogo, width/6, height/10 * 9, width/6 + ((height/10) * 1.95), height);
+      image(dmLogo, width/6 * 5 - ((height/10) * 1.41), height/10 * 9, width/6 * 5, height);
     }
+  }else{
+    imageMode(CORNER);imageMode(CORNER);
+    background("#69BE56"); //orchlab green
+    translate(translatePos1, translatePos2); // move x and y "home" based on the if/else loops above (remember this is cumalitive through this loop)
+
+  for (var i = 0; i < NumberOfButtons; i++) { // this loop places the images and sizes them based on the if/else loops above
+    image(imageFiles[i], imagePositionX[i], imagePositionY[i], picSize/3 * 2, picSize/3 *2);
+  }
   }
 
 }
@@ -272,22 +296,39 @@ function windowResized() {                    // p5 function that is called ever
 }
 
 function buttonPressed(track) {             // my function for playing files and setting the buttonstate. At present the images are linked to the onended command for p5sound which calls enndedTrack
+  if(buttonState[track] === 1){
+    imageFiles[track] = offImageFiles[track];
+    let soundmap = [0,1,2,5];
+    for(let i = 0; i < soundmap.length; i++){
+      if(track === soundmap[i]){
+        soundFiles[track].stop();
+        return;
+      }
+    }
+  }
   soundFiles[track].onended(endedTrack);
   milliseconds[track] = millis;
   soundFiles[track].play();
   buttonState[track] = 1;
   imageFiles[track] = onImageFiles[track];
   info = false;
+
+
 }
 
-function endedTrack() {                     // when the file stops playing this is called and changes images and buttonState
-  for (var i = 0; i < NumberOfButtons; i++) {
-    if (buttonState[i] === 1) {
-      imageFiles[i] = offImageFiles[i];
-      buttonState[i] = 0;
+var soundNames = ["assets/one.mp3", "assets/two.mp3", "assets/three.mp3", "assets/four.mp3", "assets/five.mp3", "assets/six.mp3", "assets/seven.mp3", "assets/eight.mp3"];
+
+function endedTrack(i) {                     // when the file stops playing this is called and changes images and buttonState
+  // console.log(`this is what i need = ${i}`);
+  // console.log(JSON.stringify(i));
+  // console.log(Object.keys(i));
+  console.log(i.file);
+  for(let j = 0; j < 8; j++){
+    if(i.file === soundNames[j]){
+      imageFiles[j] = offImageFiles[j];
+      buttonState[j] = 0;
     }
   }
-
 }
 
 // function loadImageErrorOverride(errEvt) {
