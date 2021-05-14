@@ -236,6 +236,7 @@ function touchStarted() {               // same as above but for touch. P5 manag
       }
     }
   }
+  return false;
 }
 
 function keyTyped() {     // this listens for key presses on the ol' Qwerty
