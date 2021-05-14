@@ -1,5 +1,5 @@
 {
-  "name": "Orchlab Percussion",
+  "name": "sketchpercussion",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gawainhewitt/orchlabpercussion.git"
+    "url": "git+https://github.com/gawainhewitt/sketchpercussion.git"
   },
   "keywords": [],
   "author": "Gawain Hewitt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gawainhewitt/orchlabpercussion/issues"
+    "url": "https://github.com/gawainhewitt/sketchpercussion/issues"
   },
-  "homepage": "https://github.com/gawainhewitt/orchlabpercussion#readme"
+  "homepage": "https://github.com/gawainhewitt/sketchpercussion#readme"
 }

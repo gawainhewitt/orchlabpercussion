@@ -1,6 +1,4 @@
-// The Orchlab Percussion Box
 // Code by Gawain Hewitt gawainhewitt.co.uk December 2020
-// A project for Drake Music https://www.drakemusic.org/ for the Orchlab project https://orchlab.org/
 // Made using P5.js https://p5js.org/
 // currently using an old version of P5.sound as the latest version causes glitches on Chrome browse on Android
 
@@ -169,7 +167,7 @@ function draw() {
       fill(255, 200, 255, 200);
       rect(0, 0, picSize * 4, picSize * 2);
       fill(0);
-      text('The Orchlab Percussion Box', picSize * 2, picSize/2);
+      text("Gawain's Percussion Box", picSize * 2, picSize/2);
       text('Use the letters QWERTYUI to play', picSize * 2, picSize);
       text('Or touch the screen', picSize * 2, picSize/4 * 5);
     }
@@ -178,7 +176,7 @@ function draw() {
       fill(255, 200, 255, 200);
       rect(0, 0, picSize * 4, picSize * 2);
       fill(0);
-      text('The Orchlab Percussion Box', picSize * 2, picSize/2);
+      text("Gawain's Percussion Box", picSize * 2, picSize/2);
       text('Touch the screen to play', picSize * 2, picSize);
     }
     else if ((mode === 'portrait_tablet') || (mode === 'portrait_mobile'))
@@ -186,7 +184,7 @@ function draw() {
       fill(255, 200, 255, 200);
       rect(0, 0, picSize * 2, picSize * 4);
       fill(0);
-      text('The Orchlab', picSize, picSize);
+      text("Gawain's", picSize, picSize);
       text('Percussion Box', picSize, picSize/4 * 5);
       text('Touch the screen', picSize, picSize * 2);
       text('to play', picSize, picSize/4 * 9);
