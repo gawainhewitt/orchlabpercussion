@@ -101,9 +101,10 @@ function setup() {
   milliseconds = []; // I wanted to use this to improve the animations. At present it doesn't really do anything, but it is updates in the buttonPressed function so needs to remain live at least for now
   info = true; // show the info screen? used at startup
   textAlign(CENTER, CENTER); // where the text goes on the screen
+  drawOnDemand();
 }
 
-function draw() {
+function drawOnDemand() {
 
   if (width < 500) { // test for portrait mobile
     mode  = 'portrait_mobile';
@@ -206,12 +207,12 @@ textFont(lato);
       image(dmLogo, width/6 * 5 - ((height/10) * 1.41), ((height/10 * 9)-10), width/6 * 5, height-10);
     }
   }else{
-    imageMode(CORNER);imageMode(CORNER);
+    imageMode(CORNER);
     background("#69BE56"); //orchlab green
     translate(translatePos1, translatePos2); // move x and y "home" based on the if/else loops above (remember this is cumalitive through this loop)
 
   for (var i = 0; i < NumberOfButtons; i++) { // this loop places the images and sizes them based on the if/else loops above
-    image(imageFiles[i], imagePositionX[i], imagePositionY[i], picSize/3 * 2, picSize/3 *2);
+    image(imageFiles[i], imagePositionX[i], imagePositionY[i], picSize, picSize);
   }
   }
 
@@ -293,6 +294,7 @@ function keyTyped() {     // this listens for key presses on the ol' Qwerty
 
 function windowResized() {                    // p5 function that is called every time the window is resized - allows the site to respond to changing dimensions
   resizeCanvas(windowWidth, windowHeight);
+  drawOnDemand();
 }
 
 function buttonPressed(track) {             // my function for playing files and setting the buttonstate. At present the images are linked to the onended command for p5sound which calls enndedTrack
@@ -302,6 +304,7 @@ function buttonPressed(track) {             // my function for playing files and
     for(let i = 0; i < soundmap.length; i++){
       if(track === soundmap[i]){
         soundFiles[track].stop();
+        drawOnDemand();
         return;
       }
     }
@@ -312,7 +315,7 @@ function buttonPressed(track) {             // my function for playing files and
   buttonState[track] = 1;
   imageFiles[track] = onImageFiles[track];
   info = false;
-
+  drawOnDemand();
 
 }
 
@@ -327,15 +330,7 @@ function endedTrack(i) {                     // when the file stops playing this
     if(i.file === soundNames[j]){
       imageFiles[j] = offImageFiles[j];
       buttonState[j] = 0;
+      drawOnDemand();
     }
   }
 }
-
-// function loadImageErrorOverride(errEvt) {
-//   const pic = errEvt.target;
-
-//   if (!pic.crossOrigin)  return print('Failed to reload ' + pic.src + '!');
-
-//   print('Attempting to reload it as a tainted image now...');
-//   pic.crossOrigin = null, pic.src = pic.src;
-// }
