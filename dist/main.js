@@ -299,7 +299,7 @@ function windowResized() {                    // p5 function that is called ever
 function buttonPressed(track) {             // my function for playing files and setting the buttonstate. At present the images are linked to the onended command for p5sound which calls enndedTrack
   if(buttonState[track] === 1){
     imageFiles[track] = offImageFiles[track];
-    let soundmap = [0,1,2,5];
+    let soundmap = [0,1,3,4];
     for(let i = 0; i < soundmap.length; i++){
       if(track === soundmap[i]){
         soundFiles[track].stop();
