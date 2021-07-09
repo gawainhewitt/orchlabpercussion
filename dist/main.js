@@ -241,52 +241,52 @@ function touchStarted() {               // same as above but for touch. P5 manag
 
 function keyTyped() {     // this listens for key presses on the ol' Qwerty
   switch(key) {
-    case "q" :
+    case "z" :
       buttonPressed(0);
       break;
-    case "Q" :
+    case "Z" :
       buttonPressed(0);
       break;
-    case "w" :
+    case "x" :
       buttonPressed(1);
       break;
-    case "W" :
+    case "X" :
       buttonPressed(1);
       break;
-    case "e" :
+    case "c" :
       buttonPressed(2);
       break;
-    case "E" :
+    case "C" :
       buttonPressed(2);
       break;
-    case "r" :
+    case "v" :
       buttonPressed(3);
       break;
-    case "R" :
+    case "V" :
       buttonPressed(3);
       break;
-    case "t" :
+    case "b" :
       buttonPressed(4);
       break;
-    case "T" :
+    case "B" :
       buttonPressed(4);
       break;
-    case "y" :
+    case "n" :
       buttonPressed(5);
       break;
-    case "Y" :
+    case "N" :
       buttonPressed(5);
       break;
-    case "u" :
+    case "m" :
       buttonPressed(6);
       break;
-    case "U" :
+    case "M" :
       buttonPressed(6);
       break;
-    case "i" :
+    case "," :
       buttonPressed(7);
       break;
-    case "I" :
+    case "<" :
       buttonPressed(7);
       break;
   }
