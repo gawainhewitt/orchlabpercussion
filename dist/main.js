@@ -207,7 +207,7 @@ textFont(lato);
     }
   }else{
     imageMode(CORNER);imageMode(CORNER);
-    background("#69BE56"); //orchlab green
+    background("#AD71DD"); //orchlab green
     translate(translatePos1, translatePos2); // move x and y "home" based on the if/else loops above (remember this is cumalitive through this loop)
 
   for (var i = 0; i < NumberOfButtons; i++) { // this loop places the images and sizes them based on the if/else loops above
