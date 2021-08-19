@@ -197,7 +197,7 @@ textFont(lato);
       textSize(width/18);
       text('To play: ', width/2, picSize/4 * 6);
       text('touch or click screen,', width/2, picSize/4 * 7);
-      text('or use ZXCVBNM keys', width/2, picSize/4 * 8);
+      text('or use ZXCVBNM, keys', width/2, picSize/4 * 8);
       text('on a keyboard', width/2, picSize/4 * 9);
       text('On Apple devices,', width/2, picSize/4 * 11);
       text('turn off silent mode', width/2, picSize/4 * 12);
