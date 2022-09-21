@@ -69,7 +69,7 @@ function preload() {                                  // p5.js function which pr
   image7 = loadImage('assets/seven.png');
   image8 = loadImage('assets/eight.png');
 
-  orchlabLogo = loadImage('assets/orchlablogo.jpg');
+  orchlabLogo = loadImage('assets/orchlablogo.png');
   lpoLogo = loadImage('assets/LPO_logo.png');
   dmLogo = loadImage('assets/DMLogo.png');
 
